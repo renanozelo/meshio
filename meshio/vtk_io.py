@@ -298,7 +298,7 @@ def _generate_vtk_mesh(points, cells):
             len_array,
             len_array + numcells * (num_local_nodes + 1),
             num_local_nodes + 1,
-            dtype=numpy.int64
+            dtype=numpy.int_
             ))
         cell_connectivity.append(
             numpy.c_[
@@ -313,7 +313,7 @@ def _generate_vtk_mesh(points, cells):
     cell_connectivity = numpy.concatenate(cell_connectivity)
 
     connectivity = vtk.util.numpy_support.numpy_to_vtkIdTypeArray(
-        cell_connectivity.astype(numpy.int64),
+        cell_connectivity.astype(numpy.int_),
         deep=1
         )
 
